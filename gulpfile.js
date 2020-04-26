@@ -41,28 +41,28 @@ function js() {
 	const babel = require("gulp-babel");
 	const uglify = require("gulp-uglify");
 
-	return pipeline(
-		gulp.src(JS_DIR, OPTS),
-		webpack({
-			mode,
-			devtool: "source-map",
-			output: {
-				filename: "script.js"
-			}
-		}),
-		prodOnly(sourcemaps.init({loadMaps: true})),
-		prodOnly(through.obj(function (file, enc, cb) {
+	return gulp.src(JS_DIR, OPTS)
+    .pipe(
+      webpack({
+        mode,
+        devtool: "source-map",
+        output: {
+          filename: "script.js",
+        },
+      })
+	)
+	.pipe(prodOnly(sourcemaps.init({loadMaps: true}))
+	.pipe(prodOnly(through.obj(function (file, enc, cb) {
 			// Filter out the sourcemaps since gulp-sourcemaps handles them
 			if (!file.path.endsWith(".map")) this.push(file);
 			cb();
-		})),
-		prodOnly(babel({
+		}))))
+	.pipe(	prodOnly(babel({
 			presets: ["@babel/env"]
-		})),
-		prodOnly(uglify()),
-		prodOnly(sourcemaps.write(".")),
-		gulp.dest(DEST)
-	);
+		})))
+	.pipe(prodOnly(uglify()))
+	.pipe(prodOnly(sourcemaps.write(".")))
+    .pipe(gulp.dest(DEST));
 }
 
 function css() {
