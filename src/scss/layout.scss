@@ -154,17 +154,18 @@
 }
 
 .intro {
-	background-image: url("./img/back.jpg");
+	// via https://twitter.com/kuroneko1364/status/1251333262028333056
+	background-image: url("https://pbs.twimg.com/media/EV2gvrnVcAAMN7l?format=jpg&name=4096x4096");
 	background-size: cover;
 	background-position: top right;
 	background-attachment: fixed;
 
-	.has-webp & {
-		background-image: url("./img/webp/back.webp");
-	}
+	// .has-webp & {
+	// 	background-image: url("./img/webp/back.webp");
+	// }
 
 	.title h2 {
-		background: #e669;
+		background: #97cbed99;
 		padding: 5px;
 		border-radius: 5px;
 	}
