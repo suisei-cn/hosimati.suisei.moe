@@ -271,14 +271,18 @@
 		}
 
 		a {
-			font-size: 30px;
-			line-height: 30px;
-			font-weight: 600;
 			color: #FFF;
-			border-bottom: 3px solid #E66;
 			text-decoration: none;
 			transition: all 0.05s ease-out;
-			padding: 0 10px;
+			border-bottom: 1px solid #E66;
+
+			&.big {
+				font-size: 30px;
+				line-height: 30px;
+				font-weight: 600;
+				border-bottom: 3px solid #E66;
+				padding: 0 10px;
+			}
 
 			&:hover {
 				background: #E669;
