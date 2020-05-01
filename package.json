@@ -1,11 +1,11 @@
 {
-	"name": "satania.moe",
-	"description": ">:3",
+	"name": "hosimati.suisei.moe",
+	"description": "ehihihihihi",
 	"private": true,
-	"author": "Pizzacus",
-	"version": "6.6.6",
-	"repository": "https://github.com/Pizzacus/satania.moe",
-	"homepage": "https://satania.moe",
+	"author": "suisei-cn",
+	"version": "0.1.0",
+	"repository": "https://github.com/suisei-cn/hosimati.suisei.moe",
+	"homepage": "https://hosimati-suisei-moe.netlify.app",
 	"scripts": {
 		"build": "gulp build",
 		"serve": "gulp serve"
